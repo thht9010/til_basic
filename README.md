@@ -902,6 +902,8 @@ if(true 냐 false 냐 조건 판단) {
     <div class="swiper-slide">내용</div>
     <div class="swiper-slide">내용</div>
     <div class="swiper-slide">내용</div>
+    <div class="swiper-slide">내용</div>
+    <div class="swiper-slide">내용</div>
   </div>
 </div>
 ```
@@ -913,6 +915,7 @@ if(true 냐 false 냐 조건 판단) {
 ```js
 window.addEventListener("load", function () {
   // swiper 만들기 실행
+  new Swiper(".개발자클래스", {});
 });
 ```
 
