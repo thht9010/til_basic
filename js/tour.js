@@ -57,12 +57,13 @@ window.addEventListener("load", function () {
     {
       id: 4,
       link: "#",
-      city: "마카오",
-      image: "",
-      alt: "마카오",
-      sale: "6월 할인 최저가",
-      title: "마카오 하우스 오브 댄싱 워터 쇼 티켓",
-      price: "",
+      city: "두바이/아부다비",
+      image:
+        "https://tourimage.interpark.com/product/tour/00161/A30/500/A3018969_21_583.jpg",
+      alt: "두바이/아부다비",
+      sale: "대한항공 이용, 자유일정 포함",
+      title: "[두바이/아부다비 5일]대한항공,월드체인 5성,에미레이트몰 자유시간",
+      price: "1,099,000",
     },
     {
       id: 5,
@@ -89,12 +90,13 @@ window.addEventListener("load", function () {
     {
       id: 7,
       link: "#",
-      city: "대구",
-      image: "",
-      alt: "",
-      sale: "",
-      title: "",
-      price: "",
+      city: "나트랑",
+      image:
+        "https://media.triple.guide/triple-cms/c_limit,f_auto,h_1024,w_1024/01b0fa7d-b685-427c-bf3b-e30a905bcd5e.jpeg",
+      alt: "나트랑",
+      sale: "무료왕복셔틀+10%쿠폰제공",
+      title: "더 아남 깜란",
+      price: "226,440",
     },
     {
       id: 8,
@@ -139,7 +141,7 @@ window.addEventListener("load", function () {
                     <p class="tour_city">${tourDataArr[i].city}</p>
                     <p class="tour_sale">${tourDataArr[i].sale}</p>
                     <p class="tour_item_title">${tourDataArr[i].title}</p>
-                    <p class="tour_price">${tourDataArr[i].price}</p>
+                    <p class="tour_price"><b>${tourDataArr[i].price}</b>원~</p>
                 </div>
             </a>
         </div>
