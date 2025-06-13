@@ -276,6 +276,10 @@
 
 - 시멘틱 태그로서 내용 영역 구분
 
+### 3.3.10 span 태그
+
+- 글자 단어로 이용
+
 # 4. CSS 의 이해
 
 - css 선택자
@@ -657,6 +661,38 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+```
+
+## 4.11. Gradient 온라인 도구
+- https://cssgradient.io
+
+## 4.12. 말 줄임 코드 (... 처리)
+
+```css
+대상 {
+  /* 1줄 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  /* 2줄 말줄임 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  display: -webkit-box;
+  /* -webkit-line-clamp는 줄 수 */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+```
+
+## 4.13. . 점 처리
+
+<!-- span의 마지막의 before/after 앞/뒤 에 안보이게 함. -->
+```css
+.() span:last-child::before {
+  display: none;
 }
 ```
 
