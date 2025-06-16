@@ -180,6 +180,7 @@
 /* 모바일 메뉴 */
 .mobile_header {
   position: fixed;
+  padding: 8px 20px;
   left: 0;
   top: 0;
   z-index: 999;
@@ -188,6 +189,9 @@
   width: 100%;
   padding: 15px 20px;
   background-color: #ffffff;
+}
+.mobile_scroll_line {
+  border-bottom: 1px solid #dfdfdf;
 }
 .mobile_menu {
   display: flex;

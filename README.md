@@ -665,6 +665,7 @@
 ```
 
 ## 4.11. Gradient 온라인 도구
+
 - https://cssgradient.io
 
 ## 4.12. 말 줄임 코드 (... 처리)
@@ -690,9 +691,22 @@
 ## 4.13. . 점 처리
 
 <!-- span의 마지막의 before/after 앞/뒤 에 안보이게 함. -->
+
 ```css
 .() span:last-child::before {
   display: none;
+}
+```
+
+## 4.14. 반응형 코드
+
+```css
+/* 1024px로 고정시켜서 사이즈를 줄여도 유지된다. */
+@media all and (max-width: 1024px) {
+  .tour_slide_wrap {
+    /* width: 1024px를 지울 시 자유롭게 움직일 수 있다. */
+    width: 1024px;
+  }
 }
 ```
 
