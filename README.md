@@ -1033,3 +1033,45 @@ navigation: {
         prevEl: ".버튼 클래스 명",
       },
 ```
+
+<div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">
+                      <div class="ticket_image">
+                        <img
+                          src="https://ticketimage.interpark.com/Play/image/large/25/25005076_p.gif"
+                          alt="포스터"
+                        />
+                        <div class="ticket_rank">1</div>
+                      </div>
+                      <div class="ticket_info">
+                        <p class="ticket_item_title">뮤지컬 <멤피스></p>
+                        <p class="ticket_place">충무아트센터 대극장</p>
+                        <p class="ticket_day">2025.06.17 ~ 2025.09.21</p>
+                        <div class="ticket_option">
+                          <span class="ticket_red">단독판매</span>
+                          <span class="ticket_blue">좌석우위</span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="ticket_slide_item">내용</a>
+                  </div>
