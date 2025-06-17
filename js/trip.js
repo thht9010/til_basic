@@ -107,7 +107,7 @@ window.addEventListener("load", function () {
       <div class="trip_image">
         <img
           src="${tripApiData[0].이미지}"
-          alt="${tripApiData[0].art}"
+          alt="${tripApiData[0].alt}"
         />
       </div>
       <div class="trip_info">
