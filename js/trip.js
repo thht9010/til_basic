@@ -156,11 +156,13 @@ window.addEventListener("load", function () {
         <p class="trip_schedule">
     `;
 
-    for (let j = 0; j <tripApiData[i].스케쥴.length; j++) {
+    for (let j = 0; j < tripApiData[i].스케쥴.length; j++) {
       tag = tag + `<span>${tripApiData[i].스케쥴[j]}</span>`;
     }
 
-    tag = tag + `</p>
+    tag =
+      tag +
+      `</p>
         <p class="trip_price">
           <b>${tripApiData[i].상품가격}</b>원~
           <span class="m_line">${tripApiData[i].정상가}</span>
