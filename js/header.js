@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
       mobileHeader.classList.add("mobile_scroll_line");
     } else {
-      console.log("스크롤 최상단");
+      // console.log("스크롤 최상단");
       headerTop.classList.remove("header_top_scroll");
       logo.classList.remove("logo_hide");
       sale.classList.remove("sale_hide");
