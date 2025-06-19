@@ -51,11 +51,11 @@ window.addEventListener("load", function () {
   }, 1000);
 
   // 마우스 커서로 배너 제어하기
-  bannerAnchorTag.addEventListener("mouseenter", function () {
+  bannerAnchorTag!.addEventListener("mouseenter", function () {
     // 배너 타이머 지우기
     clearInterval(bannerTimer);
   });
-  bannerAnchorTag.addEventListener("mouseleave", function () {
+  bannerAnchorTag!.addEventListener("mouseleave", function () {
     // 배너 타이머 다시 실행하기
     // clearInterval(bannerTimer)
     bannerTimer = setInterval(function () {
@@ -63,9 +63,9 @@ window.addEventListener("load", function () {
       if (startIndex >= totalCount) {
         startIndex = 0;
       }
-      bannerAnchorTag.href = bannerApiData[startIndex].link;
-      bannerImgTag.src = bannerApiData[startIndex].image;
-      bannerImgTag.alt = bannerApiData[startIndex].title;
+      bannerAnchorTag!.href = bannerApiData[startIndex].link;
+      bannerImgTag!.src = bannerApiData[startIndex].image;
+      bannerImgTag!.alt = bannerApiData[startIndex].title;
     }, 1000);
   });
 });
