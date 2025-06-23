@@ -143,7 +143,7 @@
   - `<form action="백엔드주소" method="post"></form>`
   - 데이터 비공개
 
--inpu 태그 예제
+-input 태그 예제
 
 ```html
 <form action="good.html" method="post">
@@ -350,7 +350,7 @@
 ### 4.3.3. inline-block
 
 - inline 과 block 을 조합한다.
-- 가로로 배치되면서, width, heigh 등을 자유롭게 활용함.
+- 가로로 배치되면서, width, height 등을 자유롭게 활용함.
 - 엔터키에 의한 공백 한칸이 작성됨. (원하지 않는 공백이 영역에 들어감)
 
 ### 4.3.4. flex
@@ -1037,14 +1037,3 @@ navigation: {
         prevEl: ".버튼 클래스 명",
       },
 ```
-
-<div class="live_detail_image">
-            <img
-              src="${liveApiData[i].디테일이미지}"
-              alt="${liveApiData[i].디테일alt}"
-            />
-          </div>
-          <p class="live_detail_title">
-            ${liveApiData[i].디테일타이틀}
-          </p>
-        </div>

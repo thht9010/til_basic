@@ -1,6 +1,17 @@
-window.addEventListener("load", () => {
+declare var Swiper: any;
+window.addEventListener("load", (): void => {
   // 데이터
-  const tripApiData = [
+  type TripDataType = {
+    링크: string;
+    이미지: string;
+    alt: string;
+    대상: string;
+    상품타이틀: string;
+    스케줄: string[];
+    상품가격: string;
+    정상가: string;
+  };
+  const tripApiData: TripDataType[] = ({} = [
     {
       링크: "#",
       이미지:
@@ -97,11 +108,13 @@ window.addEventListener("load", () => {
       상품가격: "1,379,000",
       정상가: "정상가 1,800,000",
     },
-  ];
+  ]);
 
   // html 태그 만들고 배치하기
-  const tripPos = document.querySelector(".sw_trip .swiper-wrapper");
-  let html = `
+  const tripPos: Element | null = document.querySelector(
+    ".sw_trip .swiper-wrapper"
+  );
+  let html: string = `
   <div class="swiper-slide">
     <a href="${tripApiData[0].링크}" class="trip_slide_item">
       <div class="trip_image">
@@ -119,10 +132,10 @@ window.addEventListener("load", () => {
           ${tripApiData[0].상품타이틀}
         </p>
         <p class="trip_schedule">
-          <span>${tripApiData[0].스케쥴[0]}</span>
-          <span>${tripApiData[0].스케쥴[1]}</span>
-          <span>${tripApiData[0].스케쥴[2]}</span>
-          <span>${tripApiData[0].스케쥴[3]}</span>
+          <span>${tripApiData[0].스케줄[0]}</span>
+          <span>${tripApiData[0].스케줄[1]}</span>
+          <span>${tripApiData[0].스케줄[2]}</span>
+          <span>${tripApiData[0].스케줄[3]}</span>
         </p>
         <p class="trip_price">
           <b>${tripApiData[0].상품가격}</b>원~
@@ -135,8 +148,9 @@ window.addEventListener("load", () => {
 
   // 실제 데이터 개수 만큼 swiper-slide 태그 만들어 배치하기
   html = "";
-  for (let i = 0; i < tripApiData.length; i++) {
-    let tag = `
+  function makeHtml(): void {
+    for (let i: number = 0; i < tripApiData.length; i++) {
+      let tag = `
     <div class="swiper-slide">
     <a href="${tripApiData[i].링크}" class="trip_slide_item">
       <div class="trip_image">
@@ -156,13 +170,13 @@ window.addEventListener("load", () => {
         <p class="trip_schedule">
     `;
 
-    for (let j = 0; j < tripApiData[i].스케쥴.length; j++) {
-      tag = tag + `<span>${tripApiData[i].스케쥴[j]}</span>`;
-    }
+      for (let j: number = 0; j < tripApiData[i].스케줄.length; j++) {
+        tag = tag + `<span>${tripApiData[i].스케줄[j]}</span>`;
+      }
 
-    tag =
-      tag +
-      `</p>
+      tag =
+        tag +
+        `</p>
         <p class="trip_price">
           <b>${tripApiData[i].상품가격}</b>원~
           <span class="m_line">${tripApiData[i].정상가}</span>
@@ -172,35 +186,41 @@ window.addEventListener("load", () => {
   </div>
     `;
 
-    html = html + tag;
+      html = html + tag;
+    }
+
+    //   console.log("만들어진 태그 :", html);
+
+    tripPos!.innerHTML = html;
   }
 
-  console.log("만들어진 태그 :", html);
-
-  tripPos.innerHTML = html;
-
   // swiper 만들기 실행
-  new Swiper(".sw_trip", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    slidesPerGroup: 1,
-    navigation: {
-      nextEl: ".trip_slide_next",
-      prevEl: ".trip_slide_prev",
-    },
-    breakpoints: {
-      960: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+  function makeSlider(): void {
+    new Swiper(".sw_trip", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      slidesPerGroup: 1,
+      navigation: {
+        nextEl: ".trip_slide_next",
+        prevEl: ".trip_slide_prev",
       },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
+      breakpoints: {
+        960: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
       },
-      1280: {
-        slidesPerView: 4,
-        spaceBetween: 20,
-      },
-    },
-  });
+    });
+  }
+
+  makeHtml();
+  makeSlider();
 });

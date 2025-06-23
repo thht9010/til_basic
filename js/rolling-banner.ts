@@ -1,5 +1,5 @@
 // 파일 로딩 완료시 실행
-window.addEventListener("load", function () {
+window.addEventListener("load", (): void => {
   // 배너 데이터
   const bannerApiData: {
     uid: number;
@@ -13,6 +13,19 @@ window.addEventListener("load", function () {
     { uid: 4, link: "#", image: "images/rolling/b4.png", title: "배너4" },
   ];
 
+  const bannerChange = () => {
+    startIndex = startIndex + 1;
+    if (startIndex >= totalCount) {
+      startIndex = 0;
+    }
+    if (bannerAnchorTag) {
+      bannerAnchorTag.href = bannerApiData[startIndex].link;
+    }
+    if (bannerImgTag) {
+      bannerImgTag.src = bannerApiData[startIndex].image;
+      bannerImgTag.alt = bannerApiData[startIndex].title;
+    }
+  };
   // html 태그의 속성의 값 바꾸기
   // html 선택하기
   const bannerAnchorTag: HTMLAnchorElement | null =
@@ -36,36 +49,16 @@ window.addEventListener("load", function () {
   let totalCount: number = bannerApiData.length;
 
   // 타이머 만들기
-  let bannerTimer: number = setInterval(function () {
-    startIndex = startIndex + 1;
-    if (startIndex >= totalCount) {
-      startIndex = 0;
-    }
-    if (bannerAnchorTag) {
-      bannerAnchorTag.href = bannerApiData[startIndex].link;
-    }
-    if (bannerImgTag) {
-      bannerImgTag.src = bannerApiData[startIndex].image;
-      bannerImgTag.alt = bannerApiData[startIndex].title;
-    }
-  }, 1000);
+  let bannerTimer: number = setInterval(bannerChange, 1000);
 
   // 마우스 커서로 배너 제어하기
-  bannerAnchorTag!.addEventListener("mouseenter", function () {
+  bannerAnchorTag!.addEventListener("mouseenter", (): void => {
     // 배너 타이머 지우기
     clearInterval(bannerTimer);
   });
-  bannerAnchorTag!.addEventListener("mouseleave", function () {
+  bannerAnchorTag!.addEventListener("mouseleave", (): void => {
     // 배너 타이머 다시 실행하기
     // clearInterval(bannerTimer)
-    bannerTimer = setInterval(function () {
-      startIndex = startIndex + 1;
-      if (startIndex >= totalCount) {
-        startIndex = 0;
-      }
-      bannerAnchorTag!.href = bannerApiData[startIndex].link;
-      bannerImgTag!.src = bannerApiData[startIndex].image;
-      bannerImgTag!.alt = bannerApiData[startIndex].title;
-    }, 1000);
+    bannerTimer = setInterval(bannerChange, 1000);
   });
 });
