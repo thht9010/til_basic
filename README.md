@@ -1037,3 +1037,35 @@ navigation: {
         prevEl: ".버튼 클래스 명",
       },
 ```
+
+# 7 . scss
+
+## 7.1. VSCode 컴파일 플러그인 설치
+
+- `Live Sass Compiler` 설치
+
+## 7.2. 실습 환경
+
+- `scss 폴더` 만들기
+- `scss 폴더/test.scss파일` 만들기
+- 반드시 VSCode의 하단 바에 `watch Sass` 를 `watching...` 으로
+
+## 7.3. 환경 셋팅
+
+- 파일명.scss는 `scss 폴더`에 보관
+- 파일명.css는 `css 폴더`에 보관
+
+```json
+"liveSassCompile.settings.formats": [
+  {
+    "format": "expanded",
+    "extensionName": ".css",
+    "savePath": "/css",
+    "savePathReplacementPairs":null
+  }
+]
+```
+
+## 7.4. 기초 문법
+
+- 참조: https://www.heropy.dev/p/Y70rPe
