@@ -1,5 +1,10 @@
+@import "val";
+@import "mixins";
+
 .wrap {
   position: relative;
+  //mixin 사용
+  @include flex-center;
   width: 960px;
 }
 .wrap .header {
@@ -13,4 +18,4 @@
 }
 .wrap .footer {
   width: 960px;
-}/*# sourceMappingURL=test.css.map */
+}

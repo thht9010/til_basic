@@ -1069,3 +1069,47 @@ navigation: {
 ## 7.4. 기초 문법
 
 - 참조: https://www.heropy.dev/p/Y70rPe
+
+### 7.4.2 변수
+
+```js
+$width-screen: 960px;
+$pc-w: 760px;
+
+.wrap {
+    position: relative;
+    width: $width-screen;
+    .header {
+        width: $width-screen;
+        .inner {
+            width: $pc-w;
+        }
+    }
+    .main {
+        // 변수 사용하기
+        width: $width-screen;
+    }
+    .footer {
+        // 변수 사용하기
+        width: $width-screen;
+    }
+}
+```
+
+### 7.4.3. 변수를 모으고 다른 scss 에서 사용하기
+
+- css 로 생성할 필요가 없는 경우 `_파일명.scss`
+- scss 폴더에 `_val.scss` 파일만듦. (파일명은 자유)
+
+```scss
+$width-screen: 960px;
+$pc-w: 760px;
+```
+
+- 변수 사용시 `@import "val";` `_` 반드시 제거하고 파일명만 작성
+
+
+### 7.4.4 함수(Mixins) 사용하기
+
+- 파일명을 `_` 를 활용하자. (`scss/_mixins.scss`)
+
