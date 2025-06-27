@@ -1113,3 +1113,7 @@ $pc-w: 760px;
 
 - 파일명을 `_` 를 활용하자. (`scss/_mixins.scss`)
 
+
+# 8. 파비콘 및 아이콘 만들기
+
+- https://realfavicongenerator.net
